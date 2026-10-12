@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Registration</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: rgb(28, 116, 145);
+}
+form {
+    background: rgb(211, 199, 199);
+    padding: 20px;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background: rgb(235, 238, 236);
+}
+
+button {
+    display: block;
+    width: auto;
+    padding: 8px 20px;
+    margin: 10px auto;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+h2 { text-align: center; }
+</style>
+</head>
+
+<body>
+<form id="f">
+<h2>Course Registration Form</h2>
+
+<input id="n" placeholder="Name"
+pattern="[A-Za-z ]{3,}" required>
+
+<input id="e" type="email"
+placeholder="Email" required>
+
+<input id="m" type="tel"
+placeholder="Mobile Number"
+pattern="[6-9][0-9]{9}" required>
+
+<input id="p" type="password"
+placeholder="Password (8 characters)"
+minlength="8" required>
+
+<select id="c" required>
+<option value="">Select Course</option>
+<option>HTML</option>
+<option>Java</option>
+<option>Python</option>
+</select>
+
+<button>Submit</button>
+<p id="msg"></p>
+</form>
+
+<script>
+f.onsubmit = function(event) {
+    event.preventDefault();
+
+    if (p.value.length < 8) {
+        msg.textContent = "Password must have 8 characters!";
+        return;
+    }
+
+    msg.style.color = "green";
+    msg.textContent = "Registration Successful!";
+};
+</script>
+</body>
+</html>
